@@ -1,0 +1,94 @@
+.signin {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.signin-signinbox {
+  width: 30%;
+}
+
+.signin-signinbox-title {
+  color: #1c7388;
+  padding-bottom: 50px;
+}
+
+.signin-signinbox {
+  padding: 50px 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+}
+
+.signin-signinbox-form {
+  position: relative;
+}
+.signin-signinbox-form-closeicon {
+  display: flex;
+  position: absolute;
+  top: -20px;
+  right: -10%;
+
+  color: black;
+}
+
+.signin-signinbox-form-top {
+  display: flex;
+  justify-content: center;
+}
+
+/* .signin-signinbox-input-email {
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: !important;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+} */
+.signin-signinbox-input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
+.signin-signinbox-button {
+  display: block;
+  margin-left: 6.5%;
+  width: 100%;
+  padding: 20px 3px;
+  margin-top: 100px;
+  background-color: #1c7388;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 27px;
+}
+
+.signin-signinbox-button:hover {
+  color: #fcba03;
+  transition: 0.5s;
+}
+
+.signin-signinbox-noaccount {
+  margin-top: 50px;
+  opacity: 80%;
+}
+
+.signin-signinbox-signup {
+  font-size: 21px;
+  opacity: 50%;
+  margin-top: 10px;
+  text-decoration: none;
+}

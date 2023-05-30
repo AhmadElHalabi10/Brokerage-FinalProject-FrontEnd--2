@@ -1,0 +1,263 @@
+.home-hero {
+  object-fit: cover;
+  height: 80vh;
+  background-image: url(../../uploads/heroPhoto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000af;
+}
+
+.home-hero-h1 {
+  width: 70%;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 30vh;
+  position: absolute;
+  color: #ecf0f1;
+}
+
+.home-hero-h1-1 {
+  color: rgba(28, 115, 136, 1);
+  font-size: 70px;
+}
+
+.home-diffierentTypeOfProperties {
+  text-align: center;
+  margin: 5% 0;
+}
+
+.home-diffierentTypeOfProperties-p1 {
+  font-size: 18px;
+  color: #808080;
+  margin: 1% 0;
+}
+
+.home-diffierentTypeOfProperties-p2 {
+  font-size: 28px;
+}
+
+.home-products {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-products-product1,
+.home-products-product2,
+.home-products-product3 {
+  width: 40vh;
+  height: 60vh;
+  background-color: #ecf0f1;
+  border-radius: 0 15%;
+  transform: rotate(-1deg);
+}
+
+.home-products-img {
+  /* position: fixed; */
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15%;
+  background: transparent;
+}
+
+.home-products-numberofproperties {
+  left: 18%;
+  bottom: 10%;
+  padding: 3% 12%;
+  background-color: #1c7388;
+  position: fixed;
+  border-radius: 50px;
+  font-size: 25px;
+  color: #ecf0f1;
+}
+
+.home-propertiesYouMayLike {
+  margin: 10% 0 5% 0;
+}
+
+.home-products-propertiesYouMayLike:hover {
+  color: #fcba03;
+  transition: 0.5s;
+}
+
+.home-propertiesYouMayLike {
+  margin: 10% 0 5% 0;
+}
+
+.home-propertiesYouMayLike-paragraph {
+  text-align: center;
+}
+
+.home-propertiesYouMayLike-p1 {
+  font-size: 18px;
+  color: #808080;
+  margin: 1% 0;
+}
+
+.home-propertiesYouMayLike-p2 {
+  font-size: 28px;
+}
+
+.home-products {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-propertiesYouMayLike-products {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.home-latestoffers-paragraph {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.home-latestoffers-p1 {
+  font-size: 27px;
+  color: #808080;
+  margin: 1% 0;
+}
+
+.home-latestoffers-p2 {
+  font-size: 35px;
+}
+
+.home-latestoffers-searchbar-container {
+  display: flex;
+  margin: 0 auto 10% auto;
+  align-items: center;
+  border: 3px solid;
+  padding: 30px;
+  border-radius: 50px;
+  width: 50%;
+}
+
+.home-latestoffers-searchbar {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 40px;
+}
+
+.home-latestoffers-searchbar::placeholder {
+  font-size: 27px;
+}
+
+.home-latestoffers-searchbar-navigationicon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .home-hero-h1 {
+    width: 80vw;
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .home-hero-h1-1 {
+    font-size: 25px;
+  }
+
+  .home-diffierentTypeOfProperties-p1 {
+    font-size: 16px;
+  }
+
+  .home-diffierentTypeOfProperties-p2 {
+    font-size: 20px;
+  }
+
+  .home-products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-products-product1,
+  .home-products-product2,
+  .home-products-product3 {
+    width: 80vw;
+    height: 100vh;
+    margin-bottom: 10vh;
+  }
+
+  .home-propertiesYouMayLike-products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-propertiesYouMayLike-products-card1 {
+    width: 100vw;
+  }
+
+  .card {
+    width: 100vw;
+  }
+
+  .home-propertiesYouMayLike-p1 {
+    font-size: 16px;
+  }
+
+  .home-propertiesYouMayLike-p2 {
+    font-size: 20px;
+  }
+
+  .home-latestoffers-p1 {
+    font-size: 16px;
+  }
+
+  .home-latestoffers-p2 {
+    font-size: 20px;
+  }
+
+  .home-latestoffers-searchbar-container {
+    margin: 0 auto 10% auto;
+    align-items: center;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 50px;
+    width: 80%;
+  }
+
+  .home-latestoffers-searchbar {
+    border: none;
+    outline: none;
+    /* flex: 1; */
+    padding: 5px;
+    font-size: 10px;
+  }
+  .home-latestoffers-searchbar {
+    margin-left: 3vw;
+    /* font-size: 16px; */
+  }
+
+  .home-latestoffers-searchbar {
+    margin-left: 3vw;
+    font-size: 16px;
+  }
+
+  .home-latestoffers-searchbar-navigationicon {
+    width: 6vw;
+    right: 8vw;
+    margin-right: 4vw;
+    position: absolute;
+  }
+
+  .home-latestoffers-searchbar::placeholder {
+    font-size: 18px;
+  }
+}
