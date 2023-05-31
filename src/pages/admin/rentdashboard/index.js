@@ -1,5 +1,5 @@
-// import React from "react";
+import React from "react";
 
-// export default function RentDashboard() {
-//   return <div>RentDashboard</div>;
-// }
+export default function RentDashboard() {
+  return <div>RentDashboard</div>;
+}

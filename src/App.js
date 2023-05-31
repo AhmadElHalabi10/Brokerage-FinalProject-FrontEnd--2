@@ -14,8 +14,8 @@ import PopUpProduct from "./pages/popupproduct";
 import Unauthorized from "./pages/admin/unauthorized/index.js";
 import LoginAdmin from "./pages/admin/login/index.js";
 import Dashboard from "./pages/admin/dashboard";
-import RentDashboard from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/NewFolder/src/pages/admin/rentdashboard";
-import BuyDashboard from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/NewFolder/src/pages/admin/buydashboard";
+import RentDashboard from "./pages/admin/rentdashboard/index.js";
+import BuyDashboard from "./pages/admin/buydashboard";
 
 function App() {
   return (
