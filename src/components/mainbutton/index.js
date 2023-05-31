@@ -1,19 +1,19 @@
-import React from "react";
-import "./mainbutton.css";
+// import React from "react";
+// import "./mainbutton.css";
 
-function MainButton(props) {
-  return (
-    <button
-      className="main-button"
-      style={props.style}
-      type={props.type}
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
-      {props.name}
-      {props.children}
-    </button>
-  );
-}
+// function MainButton(props) {
+//   return (
+//     <button
+//       className="main-button"
+//       style={props.style}
+//       type={props.type}
+//       onClick={props.onClick}
+//       disabled={props.disabled}
+//     >
+//       {props.name}
+//       {props.children}
+//     </button>
+//   );
+// }
 
-export default MainButton;
+// export default MainButton;

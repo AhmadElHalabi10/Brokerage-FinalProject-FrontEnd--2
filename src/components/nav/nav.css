@@ -64,3 +64,31 @@
   border-radius: 50px;
   background-color: #1c7388;
 }
+
+.navBar-toggle-button {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ecf0f1;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin: 10px;
+}
+
+@media (max-width: 480px) {
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navBar-toggle-button {
+    display: block;
+  }
+
+  .navBar-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

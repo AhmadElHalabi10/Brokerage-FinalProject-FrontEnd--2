@@ -1,6 +1,6 @@
 // import LoginComponent from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/Brokerage-FinalProject-FrontEnd/almorad/src/components/admin/loginComponent";
 // import axios from "axios";
-import login from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/Brokerage-FinalProject-FrontEnd/almorad/src/uploads/loginImage.jpg";
+import login from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/NewFolder/src/uploads/loginImage.jpg";
 function LoginAdmin() {
   return (
     <section className="loginAdmin">

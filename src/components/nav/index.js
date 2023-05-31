@@ -6,15 +6,23 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
   const [boxShadow, setBoxShadow] = useState("");
+  const [showVerticalNavbar, setShowVerticalNavbar] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
-      if (window.pageYOffset > 0) {
+      if (window.pageYOffset > 0 || window.innerWidth > 480) {
         setBackgroundColor("#36372f");
         setBoxShadow("0px 6px 10px #36372f");
+        setShowVerticalNavbar(false);
       } else {
         setBackgroundColor("transparent");
         setBoxShadow("");
+      }
+    }
+
+    function handleMobileScreen() {
+      if (window.innerWidth > 480) {
+        setShowVerticalNavbar(false);
       }
     }
 
@@ -26,6 +34,22 @@ export default function Nav() {
       className="navBar"
       style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
     >
+      {showVerticalNavbar ? (
+        <button
+          className="navBar-toggle-button"
+          onClick={() => setShowVerticalNavbar(false)}
+        >
+          Close
+        </button>
+      ) : (
+        <button
+          className="navBar-toggle-button"
+          onClick={() => setShowVerticalNavbar(true)}
+        >
+          Menu
+        </button>
+      )}
+      {showVerticalNavbar && <div className="navBar-vertical">Samir</div>}
       <Link to="/" className="navBar-logo link">
         <img src={alMoradLogo} className="logo-home" alt="logo" />
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./unauthorized.css";
-import MainButton from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/Brokerage-FinalProject-FrontEnd/almorad/src/components/mainbutton";
+import MainButton from "/home/ahmad/Desktop/Final-Project/Brokerage-Repository/NewFolder/src/components/mainbutton";
 import { Link } from "react-router-dom";
 
 export default function Unauthorized() {
