@@ -10,40 +10,41 @@ import Contact from "./pages/contact";
 import SignIn from "./pages/signin";
 import ListProperties from "./pages/listproperties";
 import SignUp from "./pages/signup";
-import PopUpProduct from "./pages/popupproduct";
+// import PopUpProduct from "./pages/popupproduct";
 import Unauthorized from "./pages/admin/unauthorized/index.js";
 import LoginAdmin from "./pages/admin/login/index.js";
 import Dashboard from "./pages/admin/dashboard";
 import RentDashboard from "./pages/admin/rentdashboard/index.js";
 import BuyDashboard from "./pages/admin/buydashboard";
-
+import PrivateRoutes from "./components/routes/privateroutes.js";
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard/admin" element={<Dashboard />}>
-            <Route path="/dashboard/admin" element={<BuyDashboard />} />
-            <Route path="rent" element={<RentDashboard />} />
-          </Route>
-
           <Route path="/login" element={<LoginAdmin />} />
 
-          <Route
-            path="/dashboard/admin/unauthorized"
-            element={<Unauthorized />}
-          />
-
-          <Route path="/" element={<Visiter />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/rent" element={<Rent />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/listproperties" element={<ListProperties />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Visiter />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/rent" element={<Rent />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/listproperties" element={<ListProperties />} />
+              <Route element={<PrivateRoutes />}>
+                <Route path="/dashboard/admin" element={<Dashboard />}>
+                  <Route path="/dashboard/admin" element={<BuyDashboard />} />
+                  <Route path="rent" element={<RentDashboard />} />
+                  <Route
+                    path="/dashboard/admin/unauthorized"
+                    element={<Unauthorized />}
+                  />
+                </Route>
+              </Route>
+            </Route>
           </Route>
-
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/popup" element={<PopUpProduct />} />
+          {/* <Route path="/popup" element={<PopUpProduct />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
