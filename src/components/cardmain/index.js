@@ -21,24 +21,27 @@ export default function CardMain(props) {
         <div className="cardmain-place">{props.place}</div>
         <div className="cardmain-feature">
           <img src={Bed} alt="BedIcon" className="cardmain-feature-bedicon" />
-          &nbsp;{props.numberBedRoom} Bedroom&nbsp;&nbsp; |&nbsp;&nbsp;
+          &nbsp;{props.numberBedRoom} Bedroom<span>&nbsp;&nbsp;</span> |
+          <span>&nbsp;&nbsp;</span>
           <img
             src={Bath}
             alt="BathIcon"
             className="cardmain-feature-bathicon"
           />
-          &nbsp; {props.numberBathRooms} Bathrooms &nbsp;&nbsp;|&nbsp;&nbsp;
+          &nbsp; {props.numberBathRooms}Bathrooms
+          <span>&nbsp;&nbsp;</span>|<span>&nbsp;&nbsp;</span>
           <img
             src={Capacity}
             alt="CapacityIcon"
             className="cardmain-feature-capacityicon"
           />
-          &nbsp; {props.capacity} M^2
+          &nbsp; {props.capacity} &#13217;
         </div>
 
         <div className="cardmain-contact">
-          <span onClick={handleClick}>Call</span> &nbsp;&nbsp; Email
-          &nbsp;&nbsp; WhatsApp
+          <span onClick={handleClick}>Call</span> &nbsp;&nbsp;
+          <span onClick={handleClick}>Email</span>
+          &nbsp;&nbsp; <span onClick={handleClick}>WhatsApp</span>
           <span className="cardmain-contact-price">$ {props.price}</span>
         </div>
         {showPopup && (

@@ -56,3 +56,36 @@
   /* opacity: 0.5; */
   background-color: #000000af;
 }
+
+@media only screen and (max-width: 480px) {
+  .cardmain {
+    width: 94vw;
+  }
+
+  .cardmain-information {
+    margin-left: 2vw;
+  }
+  .cardmain-information div {
+    font-size: 16px;
+  }
+
+  .cardmain-title {
+    margin-top: 1vh;
+  }
+
+  .cardmain-feature {
+    width: 60vw;
+  }
+
+  .cardmain-feature span {
+    display: none;
+  }
+  .cardmain-contact {
+    display: flex;
+    font-size: 1px;
+  }
+
+  .cardmain-information span {
+    font-size: 16px;
+  }
+}
