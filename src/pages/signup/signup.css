@@ -10,7 +10,7 @@
 .signup-signupbox-form-closeicon {
   position: absolute;
   top: 22%;
-  right: 32%;
+  right: 55%;
   color: black;
 }
 
@@ -35,14 +35,18 @@
   width: 100%;
   padding: 20px;
   margin-bottom: 10px;
-  border: none;
-  border-bottom: 1px solid gray;
+  border: none !important;
+  border-bottom: 1px solid gray !important;
   font-size: 20px;
+}
+
+.signup-signupbox-input[type="password"] {
+  width: 27vw;
 }
 
 .signup-signupbox-button {
   display: block;
-  margin-left: 25%;
+  margin-left: 21%;
   width: 60%;
   padding: 20px 3px;
   margin-top: 70px;
@@ -71,6 +75,7 @@
   margin-top: 40px;
 }
 .signup-gobackbutton {
+  display: none;
   position: absolute;
   top: 5vh;
   left: 5vw;
@@ -79,4 +84,65 @@
   font-size: 20px;
   padding: 20px 50px;
   background-color: black;
+}
+
+@media only screen and (max-width: 480px) {
+  .signup-signupbox-form {
+    margin-right: 200px;
+  }
+  .signup-signupbox {
+    padding: 50px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: none;
+    box-shadow: none;
+    text-align: center;
+  }
+  .signup-signupbox-title {
+    margin-top: 0vh;
+    margin-right: 100px;
+  }
+
+  .signup-signupbox-form-closeicon {
+    top: 10px;
+    left: 40px;
+  }
+  .signup-signupbox {
+    display: flex;
+    justify-content: start;
+    /* align-items: start; */
+    margin-top: 0px;
+    margin-left: 30px;
+    width: 80%;
+  }
+
+  .signup-signupbox-input[type="password"] {
+    width: 55vw;
+  }
+
+  .signup-signupbox-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .signup-signupbox-button {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 40px;
+  }
+
+  .signup-loginbox-haveaccount {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .signup-signupbox-signin {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .signup-signupbox-input {
+    font-size: 16px;
+    padding-left: 10px;
+  }
 }

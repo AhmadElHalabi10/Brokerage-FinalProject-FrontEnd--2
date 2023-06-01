@@ -68,7 +68,7 @@ export default function SignUp() {
           <AiOutlineCloseCircle size={30} />
         </Link>
         <form className="signup-signupbox-form" onSubmit={handleSignUp}>
-          <h1 className="signup-signupbox-title">Sign up</h1>
+          <h1 className="signup-signupbox-title">Signup</h1>
           <input
             type="text"
             placeholder="Username"
@@ -77,7 +77,7 @@ export default function SignUp() {
             onChange={(e) => setUserName(e.target.value)}
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             className="signup-signupbox-input"
             value={email}
@@ -115,11 +115,13 @@ export default function SignUp() {
           >
             {isSubmitting ? "Signing up..." : "Sign Up"}
           </button>
-          <p className="signup-loginbox-haveaccount">
-            Already have an account?
-          </p>
-          <div className="signup-signupbox-signin" onClick={goBack}>
-            Sign in
+          <div className="signup-signupbox-container">
+            <p className="signup-loginbox-haveaccount">
+              Already have an account?
+            </p>
+            <div className="signup-signupbox-signin" onClick={goBack}>
+              Login
+            </div>
           </div>
           <button className="signup-gobackbutton" onClick={goBack}>
             goBack
