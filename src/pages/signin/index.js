@@ -1,57 +1,94 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./signin.css";
-
+import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function SignIn() {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({
+    userName: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({
+    userName: "",
+    password: "",
+  });
 
-  const handleUserNameChange = (e) => {
-    setUserName(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setIsSubmitting(true);
-    setSubmitError("");
+
+    let hasErrors = false;
+
+    if (formValues.userName === "") {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        userName: "Please enter a userName.",
+      }));
+      hasErrors = true;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, userName: "" }));
+    }
+
+    if (formValues.password === "") {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        password: "Please enter a password.",
+      }));
+      hasErrors = true;
+    } else {
+      setErrors((prevErrors) => ({ ...prevErrors, password: "" }));
+    }
+
+    if (hasErrors) {
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await axios.post("http://localhost:7000/auth/login", {
-        userName: userName,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://almorad-app-api.onrender.com/auth/login",
+        {
+          userName: formValues.userName,
+          password: formValues.password,
+          role: formValues.role,
+        }
+      );
+      console.log(response);
+      const authToken = response.data.token;
 
-      console.log(response.data);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log(error.response.data); // Detailed error response from the server
-        console.log(error.response.status); // Status code
-        console.log(error.response.headers); // Response headers
-      } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an instance of XMLHttpRequest in the browser
-        console.log(error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log("Error", error.message);
+      if (response.status === 201) {
+        const expires = new Date();
+        expires.setDate(expires.getDate() + 30);
+        Cookies.set("token", authToken, { expires });
+        Cookies.set("admin", response.data.role, { expires });
+        Cookies.set("userName", response.data.userName, { expires });
+        console.log(Cookies.get("admin"));
       }
 
-      setSubmitError("An error occurred. Please try again.");
+      if (response.data.role === "admin") {
+        navigate("/dashboard/admins");
+      } else {
+        navigate("/");
+      }
+    } catch (err) {
+      if (err.response && err.response.data && err.response.data.errors) {
+        const { userName } = err.response.data.errors;
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          userName: userName ? "userName already exists." : "",
+          general: "",
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          general: "An error occurred. Please try again.",
+        }));
+        console.log(err);
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -60,7 +97,7 @@ export default function SignIn() {
   return (
     <div className="signin">
       <div className="signin-signinbox">
-        <form className="signin-signinbox-form">
+        <form className="signin-signinbox-form" onSubmit={handleSubmit}>
           <Link to="/contact" className="signin-signinbox-form-closeicon">
             <AiOutlineCloseCircle size={30} />
           </Link>
@@ -70,29 +107,33 @@ export default function SignIn() {
           <input
             type="text"
             placeholder="userName"
+            color="success"
             className="signin-signinbox-input"
-            value={userName}
-            onChange={handleUserNameChange}
+            value={formValues.userName}
+            onChange={(event) =>
+              setFormValues({ ...formValues, userName: event.target.value })
+            }
+            error={!!errors.userName}
+            helperText={errors.userName}
           />
           <input
             type="password"
             placeholder="Password"
             className="signin-signinbox-input"
-            value={password}
-            onChange={handlePasswordChange}
+            value={formValues.password}
+            onChange={(event) =>
+              setFormValues({ ...formValues, password: event.target.value })
+            }
+            error={!!errors.password}
+            helperText={errors.password}
           />
           <button
             type="submit"
             className="signin-signinbox-button"
-            onClick={handleSubmit}
             disabled={isSubmitting}
           >
             {isSubmitting ? "Signing in..." : "Sign in"}
           </button>
-
-          {submitError && (
-            <p className="signin-signinbox-error">{submitError}</p>
-          )}
 
           <div className="signin-signinbox-noaccount-signup">
             <p className="signin-signinbox-noaccount">Don't have an account?</p>

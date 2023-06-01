@@ -12,7 +12,6 @@ import ListProperties from "./pages/listproperties";
 import SignUp from "./pages/signup";
 // import PopUpProduct from "./pages/popupproduct";
 import Unauthorized from "./pages/admin/unauthorized/index.js";
-import LoginAdmin from "./pages/admin/login/index.js";
 import Dashboard from "./pages/admin/dashboard";
 import RentDashboard from "./pages/admin/rentdashboard/index.js";
 import BuyDashboard from "./pages/admin/buydashboard";
@@ -22,8 +21,6 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<LoginAdmin />} />
-
           <Route element={<PrivateRoutes />}>
             <Route path="/" element={<Visiter />}>
               <Route path="/" element={<Home />} />
@@ -42,7 +39,7 @@ function App() {
               </Route>
             </Route>
           </Route>
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           {/* <Route path="/popup" element={<PopUpProduct />} /> */}
         </Routes>
