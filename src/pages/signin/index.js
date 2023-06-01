@@ -65,7 +65,7 @@ export default function SignIn() {
             <AiOutlineCloseCircle size={30} />
           </Link>
           <div className="signin-signinbox-form-top">
-            <h1 className="signin-signinbox-title">Sign in</h1>
+            <h1 className="signin-signinbox-title">Login</h1>
           </div>
           <input
             type="text"
@@ -94,10 +94,12 @@ export default function SignIn() {
             <p className="signin-signinbox-error">{submitError}</p>
           )}
 
-          <p className="signin-signinbox-noaccount">Don't have an account?</p>
-          <Link to="/signup" className="signin-signinbox-signup">
-            Sign up
-          </Link>
+          <div className="signin-signinbox-noaccount-signup">
+            <p className="signin-signinbox-noaccount">Don't have an account?</p>
+            <Link to="/signup" className="signin-signinbox-signup">
+              Sign up
+            </Link>
+          </div>
         </form>
       </div>
     </div>
