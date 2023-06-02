@@ -27,15 +27,15 @@ function App() {
               <Route path="/rent" element={<Rent />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/listproperties" element={<ListProperties />} />
-              <Route element={<PrivateRoutes />}>
-                <Route path="/dashboard/admin" element={<Dashboard />}>
-                  <Route path="/dashboard/admin" element={<BuyDashboard />} />
-                  <Route path="rent" element={<RentDashboard />} />
-                  <Route
-                    path="/dashboard/admin/unauthorized"
-                    element={<Unauthorized />}
-                  />
-                </Route>
+              {/* <Route element={<PrivateRoutes />}> */}
+              <Route path="/dashboard/admin" element={<Dashboard />}>
+                <Route path="/dashboard/admin" element={<BuyDashboard />} />
+                <Route path="rent" element={<RentDashboard />} />
+                <Route
+                  path="/dashboard/admin/unauthorized"
+                  element={<Unauthorized />}
+                />
+                {/* </Route> */}
               </Route>
             </Route>
           </Route>

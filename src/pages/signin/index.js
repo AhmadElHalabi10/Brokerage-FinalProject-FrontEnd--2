@@ -57,22 +57,24 @@ export default function SignIn() {
           role: formValues.role,
         }
       );
-      console.log(response);
+
       const authToken = response.data.token;
 
       if (response.status === 201) {
         const expires = new Date();
         expires.setDate(expires.getDate() + 30);
         Cookies.set("token", authToken, { expires });
-        Cookies.set("admin", response.data.role, { expires });
+        Cookies.set("role", response.data.role, { expires });
         Cookies.set("userName", response.data.userName, { expires });
         console.log(Cookies.get("admin"));
       }
 
       if (response.data.role === "admin") {
-        navigate("/dashboard/admins");
-      } else {
         navigate("/");
+      } else if (response.data.role === "superAdmin") {
+        navigate("/dashboard/admin");
+      } else {
+        navigate("/signin");
       }
     } catch (err) {
       if (err.response && err.response.data && err.response.data.errors) {
@@ -113,9 +115,11 @@ export default function SignIn() {
             onChange={(event) =>
               setFormValues({ ...formValues, userName: event.target.value })
             }
-            error={!!errors.userName}
-            helperText={errors.userName}
+            error={errors.userName ? "true" : undefined}
           />
+          {errors.userName && (
+            <div className="error-text">{errors.userName}</div>
+          )}
           <input
             type="password"
             placeholder="Password"
@@ -124,9 +128,11 @@ export default function SignIn() {
             onChange={(event) =>
               setFormValues({ ...formValues, password: event.target.value })
             }
-            error={!!errors.password}
-            helperText={errors.password}
+            error={errors.password ? "true" : undefined}
           />
+          {errors.password && (
+            <div className="error-text">{errors.password}</div>
+          )}
           <button
             type="submit"
             className="signin-signinbox-button"
