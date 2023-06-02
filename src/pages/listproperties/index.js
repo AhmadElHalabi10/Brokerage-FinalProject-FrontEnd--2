@@ -8,7 +8,7 @@ import Footer from "../../components/footer";
 export default function ListProperties() {
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const propertiesPerPage = 9;
+  const propertiesPerPage = 5;
 
   useEffect(() => {
     // Fetch data from the API
@@ -38,18 +38,8 @@ export default function ListProperties() {
       <Nav />
       <div className="listproperties-hero">
         <h1 className="listproperties-hero-h1">
-          <span className="listproperties-hero-h1-1">F</span>
-          <span className="listproperties-hero-h1-2">i</span>
-          <span className="listproperties-hero-h1-3">n</span>
-          <span className="listproperties-hero-h1-4">d</span>
-          <span className="listproperties-hero-h1-5"> y</span>our dream home.
-          Browse our properties fo
-          <span className="listproperties-hero-h1-5">r</span>
-          <span className="listproperties-hero-h1-4"> s</span>
-          <span className="listproperties-hero-h1-3">a</span>
-          <span className="listproperties-hero-h1-2">l</span>
-          <span className="listproperties-hero-h1-1">e</span>
-          <span className="listproperties-hero-h1-1">.</span>
+          Find your dream home. Browse our properties
+          <span className="listproperties-hero-h1-1"> for sale</span>
         </h1>
       </div>
       <div className="listproperties-cards">

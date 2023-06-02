@@ -7,15 +7,23 @@ import Capacity from "../../uploads/capacity.png";
 export default function CardMain(props) {
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleClick = () => {
-    setShowPopup(!showPopup);
+  const handleClick = (action) => {
+    if (action === "call") {
+      window.open("tel:" + props.phoneNumber);
+    } else if (action === "email") {
+      window.open("mailto:" + props.email);
+    } else if (action === "whatsapp") {
+      window.open("https://wa.me/" + props.whatsappNumber, "_blank");
+    }
   };
+
   return (
     <div className="cardmain">
       <img
         src={`https://almorad-app-api.onrender.com/${props.image}`}
         className="cardmain-image"
-      ></img>
+        alt=""
+      />
       <div className="cardmain-information">
         <div className="cardmain-title">{props.title}</div>
         <div className="cardmain-place">{props.place}</div>
@@ -28,7 +36,7 @@ export default function CardMain(props) {
             alt="BathIcon"
             className="cardmain-feature-bathicon"
           />
-          &nbsp; {props.numberBathRooms}Bathrooms
+          &nbsp; {props.numberBathRooms} Bathrooms
           <span>&nbsp;&nbsp;</span>|<span>&nbsp;&nbsp;</span>
           <img
             src={Capacity}
@@ -39,9 +47,9 @@ export default function CardMain(props) {
         </div>
 
         <div className="cardmain-contact">
-          <span onClick={handleClick}>Call</span> &nbsp;&nbsp;
-          <span onClick={handleClick}>Email</span>
-          &nbsp;&nbsp; <span onClick={handleClick}>WhatsApp</span>
+          <span onClick={() => handleClick("call")}>&#128222;</span>&nbsp;&nbsp;
+          <span onClick={() => handleClick("email")}>&#9993;</span>&nbsp;&nbsp;
+          <span onClick={() => handleClick("whatsapp")}>&#128241;</span>
           <span className="cardmain-contact-price">$ {props.price}</span>
         </div>
         {showPopup && (
