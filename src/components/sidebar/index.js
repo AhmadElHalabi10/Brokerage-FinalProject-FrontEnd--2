@@ -1,16 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { motion } from "framer-motion";
+import alMoradLogo2 from "./alMoradLogo2.png";
+import { SidebarData } from "./data";
 import "./sideBar.css";
-import { Link } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
-export default function SideBar() {
+const Sidebar = ({ userData }) => {
+  const [selected, setSelected] = useState();
+  const [expanded, setExpanded] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(false);
+
+  const sidebarVariants = {
+    true: {
+      left: "0",
+    },
+    false: {
+      left: "-60%",
+      display: "none",
+    },
+  };
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+
+    setLoggedOut(true);
+  };
+
   return (
-    <div className="sidebar">
-      <Link to="/dashboard/admin" className="sidebar-buy">
-        Buy
-      </Link>
-      <Link to="/dashboard/admin/rent" className="sidebar-rent">
-        Rent
-      </Link>
-    </div>
+    <>
+      <div className="side-comp">
+        {loggedOut && <Navigate to="/" replace={true} />}
+        <div
+          className="side-comp__bars"
+          style={expanded ? { left: "65%" } : { left: "5%" }}
+          onClick={() => setExpanded(!expanded)}
+        >
+          <MenuIcon />
+        </div>
+        <motion.div
+          className="side-comp__sidebar"
+          variants={sidebarVariants}
+          animate={window.innerWidth <= 800 ? `${expanded}` : ""}
+        >
+          {/* logo */}
+          <div className="side-comp__logo">
+            <img src={alMoradLogo2} alt="logo" />
+          </div>
+
+          {/* menu */}
+          <div className="side-comp__menu">
+            {SidebarData.map((item, index) => {
+              return (
+                <NavLink
+                  to={item.path}
+                  className={
+                    selected === index ? "menuItem active" : "menuItem"
+                  }
+                  key={index}
+                  onClick={() => setSelected(index)}
+                >
+                  <item.icon />
+                  <span>{item.heading}</span>
+                </NavLink>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
+    </>
   );
-}
+};
+
+export default Sidebar;

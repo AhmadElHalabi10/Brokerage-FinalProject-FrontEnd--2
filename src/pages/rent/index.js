@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./rent.css";
 import CardMain from "../../components/cardmain";
+import Nav from "../../components/nav";
+import Footer from "../../components/footer";
 
 export default function Rent() {
   const [properties, setProperties] = useState([]);
@@ -16,6 +18,7 @@ export default function Rent() {
 
   return (
     <div className="rent">
+      <Nav />
       <div className="rent-hero">
         <h1 className="rent-hero-h1">
           Find your ideal
@@ -37,6 +40,7 @@ export default function Rent() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

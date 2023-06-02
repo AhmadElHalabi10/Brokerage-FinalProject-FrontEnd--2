@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./contact.css";
+import Nav from "../../components/nav";
+import Footer from "../../components/footer";
 
 export default function Contact() {
   const [userName, setUserName] = useState("");
@@ -36,6 +38,7 @@ export default function Contact() {
 
   return (
     <div>
+      <Nav />
       <div className="contact-hero">
         <h1 className="contact-hero-h1">
           <span className="contact-hero-h1-1">Contact us</span> for your dream
@@ -82,6 +85,7 @@ export default function Contact() {
           {responseMessage && <p>{responseMessage}</p>}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -71,7 +71,7 @@ export default function Nav() {
 
       {/* </div> */}
       <div className="navBar-nav-login-rightside">
-        <Link to="/signin" className="navBar-nav-login link">
+        <Link to="/login" className="navBar-nav-login link">
           Login
         </Link>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -1,6 +1,12 @@
 import React from "react";
-import "./buydashboard.css";
+import SideBar from "../../../components/sidebar";
+import "./buyDashboard.css";
 
 export default function BuyDashboard() {
-  return <div>BuyDashboard</div>;
+  return (
+    <div className="buyDashboard">
+      <SideBar />
+      <div className="buyDashboard-container">BuyDashboard</div>
+    </div>
+  );
 }

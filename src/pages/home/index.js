@@ -6,6 +6,8 @@ import ProductCardPhoto3 from "../../uploads/ProductCardPhoto3.jpg";
 import CardPhoto1 from "../../uploads/CardPhoto1.jpg";
 import CardPhoto2 from "../../uploads/CardPhoto2.jpg";
 import CardPhoto3 from "../../uploads/CardPhoto3.jpg";
+import Nav from "../../components/nav/index.js";
+import Footer from "../../components/footer/index.js";
 
 import Card from "../../components/card";
 import { BiNavigation } from "react-icons/bi";
@@ -28,12 +30,14 @@ export default function Home() {
   };
   return (
     <div className="home">
+      <Nav />
       <div className="home-hero">
         <h1 className="home-hero-h1">
           Welcome to our world of exceptional
           <span className="home-hero-h1-1"> properties</span>.
         </h1>
       </div>
+
       <div className="home-diffierentTypeOfProperties">
         <p className="home-diffierentTypeOfProperties-p1">
           Different Types of properties
@@ -128,6 +132,7 @@ export default function Home() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

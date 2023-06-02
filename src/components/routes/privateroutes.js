@@ -2,9 +2,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const PrivateRoutes = () => {
-  const token = Cookies.get("token");
+  const role = Cookies.get("role");
 
-  return token ? <Outlet /> : <Navigate to="/login" replace />;
+  return role === "superAdmin" ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default PrivateRoutes;

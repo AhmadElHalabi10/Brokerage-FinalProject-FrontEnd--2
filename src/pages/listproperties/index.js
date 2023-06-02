@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./listproperties.css";
 import CardMain from "../../components/cardmain";
+import Nav from "../../components/nav";
+import Footer from "../../components/footer";
 
 export default function ListProperties() {
   const [properties, setProperties] = useState([]);
@@ -18,6 +20,7 @@ export default function ListProperties() {
 
   return (
     <div className="listproperties">
+      <Nav />
       <div className="listproperties-hero">
         <h1 className="listproperties-hero-h1">
           <span className="listproperties-hero-h1-1">F</span>
@@ -49,6 +52,7 @@ export default function ListProperties() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

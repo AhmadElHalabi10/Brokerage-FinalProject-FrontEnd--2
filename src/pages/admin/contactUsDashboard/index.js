@@ -1,12 +1,12 @@
 import React from "react";
 import SideBar from "../../../components/sidebar";
-import "./dashboard.css";
+import "./contactUsDashboard.css";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard">
+    <div className="contactUsDashboard">
       <SideBar />
-      <div className="dashboard-container">Dashboard</div>
+      <div className="contactUsDashboard-container">ContactUsDashboard</div>
     </div>
   );
 }
