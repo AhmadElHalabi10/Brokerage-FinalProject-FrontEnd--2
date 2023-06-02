@@ -7,6 +7,8 @@ import Footer from "../../components/footer";
 
 export default function ListProperties() {
   const [properties, setProperties] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 9;
 
   useEffect(() => {
     // Fetch data from the API
@@ -17,6 +19,19 @@ export default function ListProperties() {
       })
       .catch((error) => console.error(error));
   }, []);
+
+  // Calculate the index range for properties to display based on the current page
+  const indexOfLastProperty = currentPage * propertiesPerPage;
+  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+  const currentProperties = properties.slice(
+    indexOfFirstProperty,
+    indexOfLastProperty
+  );
+
+  // Function to handle page navigation
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="listproperties">
@@ -38,8 +53,7 @@ export default function ListProperties() {
         </h1>
       </div>
       <div className="listproperties-cards">
-        {console.log(properties)}
-        {properties.map((property, index) => (
+        {currentProperties.map((property, index) => (
           <CardMain
             image={property.image}
             title={property.title}
@@ -51,6 +65,20 @@ export default function ListProperties() {
             key={index} // Add a unique key prop for each property
           />
         ))}
+      </div>
+      <div className="pagination">
+        {Array.from(
+          { length: Math.ceil(properties.length / propertiesPerPage) },
+          (_, i) => (
+            <button
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              className={currentPage === i + 1 ? "active" : ""}
+            >
+              {i + 1}
+            </button>
+          )
+        )}
       </div>
       <Footer />
     </div>

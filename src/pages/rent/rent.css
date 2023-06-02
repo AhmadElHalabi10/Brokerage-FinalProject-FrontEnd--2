@@ -38,6 +38,17 @@
   margin: 4vh 0 4vh 2vw;
 }
 
+.pagination {
+  margin-left: 30%;
+  margin-bottom: 10%;
+}
+.pagination button {
+  width: 5vw;
+  height: 5vh;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
 @media only screen and (max-width: 480px) {
   .rent-hero {
     height: 60vh;
