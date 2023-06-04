@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Visiter from "./pages/visiter";
 import Home from "./pages/home";
 import Rent from "./pages/rent";
 import Contact from "./pages/contact";
