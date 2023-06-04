@@ -13,7 +13,7 @@
 .contact-bigger {
   object-fit: cover;
   height: 100vh;
-  background-image: url(../../uploads/heroPhoto.jpg);
+  background-image: url(https://i.ibb.co/Kbq5sCh/Abstract-Paper-1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -53,7 +53,7 @@ textarea {
 .contact-hero {
   object-fit: cover;
   height: 80vh;
-  background-image: url(../../uploads/ContactPhoto.jpg);
+  background-image: url(https://i.ibb.co/BG4m1Tn/Contact-Photo.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
