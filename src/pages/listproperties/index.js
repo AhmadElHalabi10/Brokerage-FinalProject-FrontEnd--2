@@ -11,6 +11,10 @@ export default function ListProperties() {
   const propertiesPerPage = 5;
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []);
+
+  useEffect(() => {
     // Fetch data from the API
     axios
       .get(`https://almorad-app-api.onrender.com/buyProperty`)

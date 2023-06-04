@@ -11,6 +11,10 @@ export default function Rent() {
   const propertiesPerPage = 5;
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []);
+
+  useEffect(() => {
     // Fetch data from the API
     axios
       .get(`${process.env.REACT_APP_URL}/rentProperty`)

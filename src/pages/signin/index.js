@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./signin.css";
 import Cookies from "js-cookie";
@@ -16,6 +16,10 @@ export default function SignIn() {
     userName: "",
     password: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

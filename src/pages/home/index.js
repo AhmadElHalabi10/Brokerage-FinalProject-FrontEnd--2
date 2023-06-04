@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import ProductCardPhoto1 from "../../uploads/ProductCardPhoto1.jpg";
 import ProductCardPhoto2 from "../../uploads/ProductCardPhoto2.jpg";
@@ -16,6 +16,9 @@ export default function Home() {
   const [searchValue, setSearchValue] = useState("");
   const [email, setEmail] = useState("");
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []);
   // const handleChanges = (e) => {
   //   setEmail(e.target.value);
   // };

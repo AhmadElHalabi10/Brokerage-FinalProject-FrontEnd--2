@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./contact.css";
 import Nav from "../../components/nav";
@@ -9,6 +9,10 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
