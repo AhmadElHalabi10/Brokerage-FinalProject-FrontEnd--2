@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import CardPhoto1 from "../../uploads/CardPhoto1.jpg";
-import CardPhoto2 from "../../uploads/CardPhoto2.jpg";
-import CardPhoto3 from "../../uploads/CardPhoto3.jpg";
 import Nav from "../../components/nav/index.js";
 import Footer from "../../components/footer/index.js";
 
