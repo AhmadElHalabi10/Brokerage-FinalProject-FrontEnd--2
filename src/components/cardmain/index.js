@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./cardmain.css";
 import Bed from "../../uploads/sleeping.png";
 import Bath from "../../uploads/bath.png";
@@ -8,8 +8,6 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import EmailIcon from "@mui/icons-material/Email";
 
 export default function CardMain(props) {
-  const [showPopup, setShowPopup] = useState(false);
-
   const handleClick = (action) => {
     if (action === "call") {
       window.open("tel:" + props.phoneNumber);
@@ -59,9 +57,6 @@ export default function CardMain(props) {
           </span>
           <span className="cardmain-contact-price">$ {props.price}</span>
         </div>
-        {showPopup && (
-          <div className="cardmain-popup">Add your popup content here</div>
-        )}
       </div>
     </div>
   );

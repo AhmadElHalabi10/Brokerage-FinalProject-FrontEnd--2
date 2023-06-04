@@ -13,35 +13,32 @@ import Card from "../../components/card";
 import { BiNavigation } from "react-icons/bi";
 
 export default function Home() {
-  const [searchValue, setSearchValue] = useState("");
-  const [email, setEmail] = useState("");
+  // const [EmailValue, setEmailValue] = useState("");
 
+  // const handleChange = (event) => {
+  //   setEmailValue(event.target.value);
+
+  // }
+
+  const [email, setEmail] = useState("");
+  const handleClick = () => {
+    setEmail("");
+  };
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top when the component mounts
   }, []);
-  // const handleChanges = (e) => {
-  //   setEmail(e.target.value);
-  // };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here you can use the 'email' value as needed
-  //   console.log("Submitted email:", email);
-  // };
-
-  // const handleClick = () => {
-  //   setSearchValue("");
+  // const handleKeyDown = (event) => {
+  //   if (event.keyCode === 13) {
+  //   }
   // };
 
   const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      setSearchValue("");
+    if (event.key === "Enter") {
+      setEmail("");
     }
   };
 
-  const handleChange = (event) => {
-    setSearchValue(event.target.value);
-  };
   return (
     <div className="home">
       <Nav />
@@ -129,7 +126,7 @@ export default function Home() {
           <p className="home-latestoffers-p2">
             Send us your email and we will do the rest
           </p>
-        </div>{" "}
+        </div>
         <form>
           <div className="home-latestoffers-searchbar-container">
             <input
@@ -137,12 +134,13 @@ export default function Home() {
               placeholder="Type email..."
               className="home-latestoffers-searchbar"
               value={email}
-              onChange={handleChange}
+              onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDown}
             />
             <BiNavigation
               className="home-latestoffers-searchbar-navigationicon"
               size={40}
+              onClick={handleClick}
             />
           </div>
           {/* <button type="submit">Submit</button> */}

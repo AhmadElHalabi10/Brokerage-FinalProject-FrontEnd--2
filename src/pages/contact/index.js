@@ -31,6 +31,9 @@ export default function Contact() {
 
       if (response.status === 200) {
         setResponseMessage(data.message);
+        setUserName("");
+        setEmail("");
+        setSubject("");
       } else {
         setResponseMessage(data.error);
       }
