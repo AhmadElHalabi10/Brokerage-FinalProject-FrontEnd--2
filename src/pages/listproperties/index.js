@@ -4,15 +4,13 @@ import "./listproperties.css";
 import CardMain from "../../components/cardmain";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
+import Loader from "../../components/loader"; // Import the loader component
 
 export default function ListProperties() {
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true); // New loading state
   const propertiesPerPage = 5;
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top when the component mounts
-  }, []);
 
   useEffect(() => {
     // Fetch data from the API
@@ -20,8 +18,12 @@ export default function ListProperties() {
       .get(`https://almorad-app-api.onrender.com/buyProperty`)
       .then((response) => {
         setProperties(response.data.response);
+        setIsLoading(false); // Set loading state to false when data arrives
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false); // Set loading state to false if an error occurs
+      });
   }, []);
 
   // Calculate the index range for properties to display based on the current page
@@ -43,22 +45,27 @@ export default function ListProperties() {
       <div className="listproperties-hero">
         <h1 className="listproperties-hero-h1">
           Find your dream home. Browse our properties
-          <span className="listproperties-hero-h1-1"> for sale</span>.
+          <span className="listproperties-hero-h1-1"> for sale</span>
         </h1>
       </div>
       <div className="listproperties-cards">
-        {currentProperties.map((property, index) => (
-          <CardMain
-            image={property.image}
-            title={property.title}
-            place={property.place}
-            numberBedRoom={property.numberBedRoom}
-            numberBathRooms={property.numberBathRooms}
-            capacity={property.capacity}
-            price={property.price}
-            key={index} // Add a unique key prop for each property
-          />
-        ))}
+        {isLoading ? ( // Render the loader if isLoading is true
+          <Loader />
+        ) : (
+          // Render the properties when data has arrived
+          currentProperties.map((property, index) => (
+            <CardMain
+              image={property.image}
+              title={property.title}
+              place={property.place}
+              numberBedRoom={property.numberBedRoom}
+              numberBathRooms={property.numberBathRooms}
+              capacity={property.capacity}
+              price={property.price}
+              key={index} // Add a unique key prop for each property
+            />
+          ))
+        )}
       </div>
       <div className="pagination">
         {Array.from(

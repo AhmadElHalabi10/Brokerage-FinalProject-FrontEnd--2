@@ -4,10 +4,12 @@ import "./rent.css";
 import CardMain from "../../components/cardmain";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
+import Loader from "../../components/loader";
 
 export default function Rent() {
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true); // New loading state
   const propertiesPerPage = 5;
 
   useEffect(() => {
@@ -15,11 +17,18 @@ export default function Rent() {
   }, []);
 
   useEffect(() => {
+    setIsLoading(true); // Set loading state to true when fetching data
     // Fetch data from the API
     axios
       .get(`${process.env.REACT_APP_URL}/rentProperty`)
-      .then((response) => setProperties(response.data.response))
-      .catch((error) => console.error(error));
+      .then((response) => {
+        setProperties(response.data.response);
+        setIsLoading(false); // Set loading state to false when data arrives
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false); // Set loading state to false if an error occurs
+      });
   }, []);
 
   // Calculate the index range for properties to display based on the current page
@@ -46,18 +55,23 @@ export default function Rent() {
         </h1>
       </div>
       <div className="rent-cardmains">
-        {currentProperties.map((property, index) => (
-          <CardMain
-            image={property.image}
-            title={property.title}
-            place={property.place}
-            numberBedRoom={property.numberBedRoom}
-            numberBathRooms={property.numberBathRooms}
-            capacity={property.capacity}
-            price={property.price}
-            key={index} // Add a unique key prop for each property
-          />
-        ))}
+        {isLoading ? ( // Render the loader if isLoading is true
+          <Loader />
+        ) : (
+          // Render the properties when data has arrived
+          currentProperties.map((property, index) => (
+            <CardMain
+              image={property.image}
+              title={property.title}
+              place={property.place}
+              numberBedRoom={property.numberBedRoom}
+              numberBathRooms={property.numberBathRooms}
+              capacity={property.capacity}
+              price={property.price}
+              key={index} // Add a unique key prop for each property
+            />
+          ))
+        )}
       </div>
       <div className="pagination">
         {Array.from(
