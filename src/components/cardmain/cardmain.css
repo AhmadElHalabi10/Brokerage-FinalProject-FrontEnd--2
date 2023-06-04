@@ -11,6 +11,7 @@
 .cardmain-image {
   width: 40vh;
   height: 100%;
+  object-fit: cover;
 }
 
 .cardmain-information {
@@ -44,22 +45,16 @@
 }
 
 .cardmain-contact-price {
-  margin-left: 70vh;
-}
-
-.cardmain-popup {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 73.4%;
-  height: 100%;
-  /* opacity: 0.5; */
-  background-color: #000000af;
+  margin-left: 25vw;
 }
 
 @media only screen and (max-width: 480px) {
   .cardmain {
     width: 94vw;
+  }
+
+  .cardmain-image {
+    width: 35vw;
   }
 
   .cardmain-information {
