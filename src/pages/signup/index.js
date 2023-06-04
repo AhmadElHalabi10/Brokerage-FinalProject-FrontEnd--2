@@ -102,7 +102,7 @@ export default function SignUp() {
 
     // Make the Axios POST request
     axios
-      .post("https://almorad-app-api.onrender.com/auth/register", formData)
+      .post(`${process.env.REACT_APP_URL}/auth/register`, formData)
       .then((response) => {
         console.log(response);
         navigate("/login");

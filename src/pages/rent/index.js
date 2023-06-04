@@ -13,7 +13,7 @@ export default function Rent() {
   useEffect(() => {
     // Fetch data from the API
     axios
-      .get(`https://almorad-app-api.onrender.com/rentProperty`)
+      .get(`${process.env.REACT_APP_URL}/rentProperty`)
       .then((response) => setProperties(response.data.response))
       .catch((error) => console.error(error));
   }, []);
