@@ -39,7 +39,7 @@ export default function ListProperties() {
       <div className="listproperties-hero">
         <h1 className="listproperties-hero-h1">
           Find your dream home. Browse our properties
-          <span className="listproperties-hero-h1-1"> for sale</span>
+          <span className="listproperties-hero-h1-1"> for sale</span>.
         </h1>
       </div>
       <div className="listproperties-cards">
