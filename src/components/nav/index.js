@@ -71,6 +71,9 @@ export default function Nav() {
         <Link to="/contact" className="navBar-nav-contact link">
           Contact
         </Link>
+        <Link to="/about" className="navBar-nav-about link">
+          About
+        </Link>
       </nav>
 
       <div className="navBar-nav-login-rightside">
@@ -124,6 +127,13 @@ export default function Nav() {
           onClick={() => setShowMobileNav(false)}
         >
           Contact
+        </Link>
+        <Link
+          to="/about"
+          className="navBar-nav-about link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          About
         </Link>
         <Link
           to="/login"

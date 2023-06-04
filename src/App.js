@@ -5,11 +5,10 @@ import "./App.css";
 import Home from "./pages/home";
 import Rent from "./pages/rent";
 import Contact from "./pages/contact";
-// import Admin from "./pages/admin";
+import About from "./pages/about";
 import SignIn from "./pages/signin";
 import ListProperties from "./pages/listproperties";
 import SignUp from "./pages/signup";
-// import PopUpProduct from "./pages/popupproduct";
 import Unauthorized from "./pages/admin/unauthorized/index.js";
 import Dashboard from "./pages/admin/dashboard";
 import AdminsDashboard from "./pages/admin/adminsDashboard";
@@ -28,8 +27,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rent" element={<Rent />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/listproperties" element={<ListProperties />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
 
