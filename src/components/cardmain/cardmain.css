@@ -45,7 +45,7 @@
 }
 
 .cardmain-contact-price {
-  margin-left: 25vw;
+  margin-left: 20vw;
 }
 
 @media only screen and (max-width: 480px) {
@@ -78,6 +78,11 @@
   .cardmain-contact {
     display: flex;
     font-size: 1px;
+    margin-left: 5vw;
+  }
+
+  .cardmain-contact span {
+    font-size: 40px;
   }
 
   .cardmain-information span {

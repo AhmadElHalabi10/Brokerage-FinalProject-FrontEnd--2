@@ -3,6 +3,9 @@ import "./cardmain.css";
 import Bed from "../../uploads/sleeping.png";
 import Bath from "../../uploads/bath.png";
 import Capacity from "../../uploads/capacity.png";
+import CallIcon from "@mui/icons-material/Call";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function CardMain(props) {
   const [showPopup, setShowPopup] = useState(false);
@@ -43,9 +46,17 @@ export default function CardMain(props) {
         </div>
 
         <div className="cardmain-contact">
-          <span onClick={() => handleClick("call")}>&#128222;</span>&nbsp;&nbsp;
-          <span onClick={() => handleClick("email")}>&#9993;</span>&nbsp;&nbsp;
-          <span onClick={() => handleClick("whatsapp")}>&#128241;</span>
+          <span onClick={() => handleClick("call")}>
+            <CallIcon />
+          </span>
+          &nbsp;&nbsp;
+          <span onClick={() => handleClick("email")}>
+            <EmailIcon />
+          </span>
+          &nbsp;&nbsp;
+          <span onClick={() => handleClick("whatsapp")}>
+            <WhatsAppIcon />
+          </span>
           <span className="cardmain-contact-price">$ {props.price}</span>
         </div>
         {showPopup && (
