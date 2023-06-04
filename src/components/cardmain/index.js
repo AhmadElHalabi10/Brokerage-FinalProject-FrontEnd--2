@@ -19,11 +19,7 @@ export default function CardMain(props) {
 
   return (
     <div className="cardmain">
-      <img
-        src={`https://almorad-app-api.onrender.com/${props.image}`}
-        className="cardmain-image"
-        alt=""
-      />
+      <img src={props.image} className="cardmain-image" alt="" />
       <div className="cardmain-information">
         <div className="cardmain-title">{props.title}</div>
         <div className="cardmain-place">{props.place}</div>

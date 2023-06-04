@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./nav.css";
 import alMoradLogo from "../../uploads/alMoradLogo2.png";
 import { Link } from "react-router-dom";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 export default function Nav() {
   const [backgroundColor, setBackgroundColor] = useState("transparent");
   const [boxShadow, setBoxShadow] = useState("");
   const [showVerticalNavbar, setShowVerticalNavbar] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -34,7 +37,7 @@ export default function Nav() {
       className="navBar"
       style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
     >
-      {showVerticalNavbar ? (
+      {/* {showVerticalNavbar ? (
         <button
           className="navBar-toggle-button"
           onClick={() => setShowVerticalNavbar(false)}
@@ -48,37 +51,96 @@ export default function Nav() {
         >
           Menu
         </button>
-      )}
-      {showVerticalNavbar && <div className="navBar-vertical">Samir</div>}
+      )} */}
+      {/* {showVerticalNavbar && <div className="navBar-vertical">Samir</div>} */}
       <Link to="/" className="navBar-logo link">
         <img src={alMoradLogo} className="logo-home" alt="logo" />
-
         <h3>AlMorad</h3>
       </Link>
-      <Link to="/" className="navBar-nav-home link">
-        Home
-      </Link>
+      <nav className="main-header-nav">
+        <Link to="/" className="navBar-nav-home link">
+          Home
+        </Link>
 
-      <Link to="/rent" className="navBar-nav-rent link">
-        Rent
-      </Link>
-      <Link to="/listproperties" className="navBar-nav-listproperties link">
-        Buy
-      </Link>
-      <Link to="/contact" className="navBar-nav-contact link">
-        Contact
-      </Link>
+        <Link to="/rent" className="navBar-nav-rent link">
+          Rent
+        </Link>
+        <Link to="/listproperties" className="navBar-nav-listproperties link">
+          Buy
+        </Link>
+        <Link to="/contact" className="navBar-nav-contact link">
+          Contact
+        </Link>
+      </nav>
 
-      {/* </div> */}
       <div className="navBar-nav-login-rightside">
         <Link to="/login" className="navBar-nav-login link">
           Login
         </Link>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Link to="/signup" className="navBar-nav-register link">
           Register
         </Link>
       </div>
+      <div className="mobile-nav-btn">
+        {showMobileNav ? (
+          <CloseRoundedIcon
+            style={{ color: "#fff" }}
+            onClick={() => setShowMobileNav(false)}
+          />
+        ) : (
+          <MenuRoundedIcon
+            onClick={() => setShowMobileNav(true)}
+            style={{ color: "#fff" }}
+          />
+        )}
+      </div>
+      {/* {showMobileNav && ( */}
+      <div className={`mobile-navbar ${showMobileNav ? "close" : ""}`}>
+        <Link
+          to="/"
+          className="navBar-nav-home link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Home
+        </Link>
+
+        <Link
+          to="/rent"
+          className="navBar-nav-rent link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Rent
+        </Link>
+        <Link
+          to="/listproperties"
+          className="navBar-nav-listproperties link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Buy
+        </Link>
+        <Link
+          to="/contact"
+          className="navBar-nav-contact link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Contact
+        </Link>
+        <Link
+          to="/login"
+          className="navBar-nav-login link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="navBar-nav-register link"
+          onClick={() => setShowMobileNav(false)}
+        >
+          Register
+        </Link>
+      </div>
+      {/* )} */}
     </div>
   );
 }

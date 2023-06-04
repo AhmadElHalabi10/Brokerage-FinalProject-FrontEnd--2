@@ -14,10 +14,21 @@ import { BiNavigation } from "react-icons/bi";
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleClick = () => {
-    setSearchValue("");
-  };
+  // const handleChanges = (e) => {
+  //   setEmail(e.target.value);
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you can use the 'email' value as needed
+  //   console.log("Submitted email:", email);
+  // };
+
+  // const handleClick = () => {
+  //   setSearchValue("");
+  // };
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
@@ -61,7 +72,7 @@ export default function Home() {
             src={ProductCardPhoto2}
             alt="Hello2"
           />
-          <div className="home-products-numberofproperties">3 properties</div>
+          <div className="home-products-numberofproperties">2 properties</div>
         </div>
         <div className="home-products-product3">
           <img
@@ -69,7 +80,7 @@ export default function Home() {
             src={ProductCardPhoto3}
             alt="Hello3"
           />
-          <div className="home-products-numberofproperties">3 properties</div>
+          <div className="home-products-numberofproperties">1 properties</div>
         </div>
       </div>
 
@@ -115,22 +126,24 @@ export default function Home() {
           <p className="home-latestoffers-p2">
             Send us your email and we will do the rest
           </p>
-        </div>
-        <div className="home-latestoffers-searchbar-container">
-          <input
-            type="search"
-            placeholder="Type email..."
-            className="home-latestoffers-searchbar"
-            value={searchValue}
-            onClick={handleClick}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-          />
-          <BiNavigation
-            className="home-latestoffers-searchbar-navigationicon"
-            size={40}
-          />
-        </div>
+        </div>{" "}
+        <form>
+          <div className="home-latestoffers-searchbar-container">
+            <input
+              type="search"
+              placeholder="Type email..."
+              className="home-latestoffers-searchbar"
+              value={email}
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+            />
+            <BiNavigation
+              className="home-latestoffers-searchbar-navigationicon"
+              size={40}
+            />
+          </div>
+          {/* <button type="submit">Submit</button> */}
+        </form>
       </div>
       <Footer />
     </div>

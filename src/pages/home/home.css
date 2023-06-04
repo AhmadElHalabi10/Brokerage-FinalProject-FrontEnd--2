@@ -173,6 +173,9 @@
   .home-hero-h1-1 {
     font-size: 25px;
   }
+  .home-diffierentTypeOfProperties {
+    margin-top: 8vh;
+  }
 
   .home-diffierentTypeOfProperties-p1 {
     font-size: 16px;
@@ -190,8 +193,8 @@
   .home-products-product1,
   .home-products-product2,
   .home-products-product3 {
-    width: 80vw;
-    height: 100vh;
+    width: 70vw;
+    height: 60vh;
     margin-bottom: 10vh;
   }
 

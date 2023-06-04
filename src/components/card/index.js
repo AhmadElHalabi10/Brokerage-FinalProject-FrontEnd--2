@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 export default function Card(props) {
   return (
     <Link to="/listproperties" className="card">
-      <img src={props.image} alt="Property" className="card-image" />
+      <div className="image-container">
+        <img src={props.image} alt="Property" className="card-image" />
+      </div>
       <div className="card-features">
         {/* <h3 className="card-features-type">{props.type}</h3> */}
 
