@@ -193,12 +193,12 @@
 @media only screen and (max-width: 480px) {
   .home-hero-h1 {
     width: 80vw;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 40px;
+    line-height: 40px;
   }
 
   .home-hero-h1-1 {
-    font-size: 25px;
+    font-size: 40px;
   }
   .home-diffierentTypeOfProperties {
     margin-top: 8vh;
