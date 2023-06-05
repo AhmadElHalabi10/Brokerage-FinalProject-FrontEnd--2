@@ -54,7 +54,7 @@ export default function SignIn() {
 
     try {
       const response = await axios.post(
-        `REACT_APP_URL=https://almorad-app-api.onrender.com/auth/login`,
+        `https://almorad-app-api.onrender.com/auth/login`,
         {
           userName: formValues.userName,
           password: formValues.password,
