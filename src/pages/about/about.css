@@ -134,6 +134,7 @@
   .about-section-header {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    margin-top: 30vh;
   }
 
   .about-img-map {
@@ -153,7 +154,7 @@
   }
 }
 
-@media (max-width: 240px) {
+@media (max-width: 260px) {
   .about-hero-h1,
   .about-hero-h1 span {
     font-size: 1.5rem;

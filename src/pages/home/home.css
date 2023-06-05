@@ -290,7 +290,26 @@
   .home-latestoffers-searchbar::placeholder {
     font-size: 18px;
   }
+
+  .home-products-numberofproperties {
+    font-size: 1.5rem;
+  }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 370px) {
+  .home-products-numberofproperties {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 290px) {
+  .home-products-numberofproperties {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 245px) {
+  .home-products-numberofproperties {
+    font-size: 0.8rem;
+  }
 }
