@@ -61,6 +61,10 @@
     height: 60vh;
   }
 
+  .pagination {
+    margin-left: 45%;
+  }
+
   .rent-hero::before {
     height: 60vh;
   }

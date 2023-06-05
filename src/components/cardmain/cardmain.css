@@ -50,7 +50,11 @@
 
 @media only screen and (max-width: 480px) {
   .cardmain {
-    width: 94vw;
+    width: 97vw;
+  }
+
+  .cardmain-contact-price {
+    margin-left: 18vw;
   }
 
   .cardmain-image {
