@@ -9,6 +9,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top when the component mounts
@@ -16,6 +17,18 @@ export default function Contact() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Simulate submitting the form to the backend
+    setResponseMessage("");
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setResponseMessage("");
+      setUserName("");
+      setEmail("");
+      setSubject("");
+      setIsSubmitting(false); // Set isSubmitting to false after clearing form values
+    }, 4000);
 
     try {
       const response = await axios.post(
@@ -39,7 +52,7 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Error:", error);
-      setResponseMessage("An error occurred while submitting the form.");
+      setResponseMessage("");
     }
   };
 
@@ -86,10 +99,14 @@ export default function Contact() {
                 onChange={(e) => setSubject(e.target.value)}
               ></textarea>
 
-              <input type="submit" value="Submit" />
+              <button type="submit" value="Submit" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
             </form>
           </div>
-          {responseMessage && <p>{responseMessage}</p>}
+          {responseMessage && (
+            <p className="response-message">{responseMessage}</p>
+          )}
         </div>
       </div>
       <Footer />

@@ -37,6 +37,14 @@ textarea {
   resize: vertical;
 }
 
+/* .response-message {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 5%;
+} */
+
 .contact-hero-h1 {
   width: 70%;
   font-size: 60px;
@@ -72,7 +80,9 @@ textarea {
   background-color: #000000af;
 }
 
-input[type="submit"] {
+button[type="submit"] {
+  display: flex;
+  justify-content: center;
   background-color: #1c7388 !important;
   color: white;
   font-size: 20px;
@@ -82,7 +92,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
   color: #fca510;
   transition: 0.5s;
 }
@@ -95,7 +105,7 @@ input[type="submit"]:hover {
   margin-left: 10.7vw;
 }
 
-.contact-container form input[type="submit"] {
+.contact-container form button[type="submit"] {
   display: flex;
   margin-top: 3vh;
   margin-left: 13vw;
@@ -138,7 +148,7 @@ input[type="submit"]:hover {
     margin: 0;
   }
 
-  .contact-container form input[type="submit"] {
+  .contact-container form button[type="submit"] {
     margin-left: 0vw;
     width: 100%;
     padding-right: 20vw;
