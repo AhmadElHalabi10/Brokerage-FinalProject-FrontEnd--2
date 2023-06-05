@@ -193,9 +193,9 @@ export default function SignUp() {
             <p className="signup-loginbox-haveaccount">
               Already have an account?
             </p>
-            <div className="signup-signupbox-signin" onClick={goBack}>
+            <Link to="/login" className="signup-signupbox-signin">
               Login
-            </div>
+            </Link>
           </div>
           <button className="signup-gobackbutton" onClick={goBack}>
             goBack

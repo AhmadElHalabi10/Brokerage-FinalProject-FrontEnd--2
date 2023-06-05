@@ -9,8 +9,8 @@
 
 .signup-signupbox-form-closeicon {
   position: absolute;
-  top: 12vh;
-  right: 30vw;
+  top: 14vh;
+  right: 33vw;
   color: black;
 }
 
@@ -41,7 +41,8 @@
 }
 
 .signup-signupbox-input[type="password"] {
-  width: 27vw;
+  padding-left: 0.7rem;
+  width: 27.8vw;
 }
 
 .signup-signupbox-button {
@@ -74,6 +75,11 @@
   text-decoration: none;
   margin-top: 40px;
 }
+
+.signup-signupbox-signin {
+  cursor: pointer;
+}
+
 .signup-gobackbutton {
   display: none;
   position: absolute;
