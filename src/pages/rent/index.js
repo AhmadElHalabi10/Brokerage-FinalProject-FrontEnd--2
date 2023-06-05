@@ -20,7 +20,7 @@ export default function Rent() {
     setIsLoading(true); // Set loading state to true when fetching data
     // Fetch data from the API
     axios
-      .get(`${process.env.REACT_APP_URL}/rentProperty`)
+      .get(`https://almorad-app-api.onrender.com/rentProperty`)
       .then((response) => {
         setProperties(response.data.response);
         setIsLoading(false); // Set loading state to false when data arrives

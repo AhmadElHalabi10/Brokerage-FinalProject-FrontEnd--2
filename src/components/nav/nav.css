@@ -84,14 +84,12 @@
   color: #ecf0f1;
   font-size: 20px;
   cursor: pointer;
-  align-self: flex-start;
   margin: 10px;
 }
 
 @media (max-width: 480px) {
   /* .navBar {
     flex-direction: column;
-    align-items: flex-start;
   } */
 
   .navBar-toggle-button {
@@ -101,7 +99,6 @@
   .navBar-vertical {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 }
 

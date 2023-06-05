@@ -22,7 +22,7 @@
 
 .home-hero-h1 {
   width: 70%;
-  font-size: 60px;
+  font-size: clamp(1rem, 10vw, 4rem);
   text-align: center;
   margin-top: 30vh;
   position: absolute;
@@ -31,7 +31,7 @@
 
 .home-hero-h1-1 {
   color: rgba(28, 115, 136, 1);
-  font-size: 70px;
+  font-size: clamp(1rem, 10vw, 4rem);
 }
 
 .home-products-product1 {
@@ -60,13 +60,13 @@
 }
 
 .home-diffierentTypeOfProperties-p1 {
-  font-size: 18px;
+  font-size: clamp(0.5rem, 10vw, 1rem);
   color: #808080;
   margin: 1% 0;
 }
 
 .home-diffierentTypeOfProperties-p2 {
-  font-size: 28px;
+  font-size: clamp(0.5rem, 10vw, 1rem);
 }
 
 .home-products {
@@ -98,7 +98,7 @@
   background-color: #1c7388;
   position: fixed;
   border-radius: 50px;
-  font-size: 25px;
+  font-size: clamp(1rem, 10vw, 2rem);
   color: #ecf0f1;
 }
 
@@ -120,13 +120,13 @@
 }
 
 .home-propertiesYouMayLike-p1 {
-  font-size: 18px;
+  font-size: clamp(0.5rem, 10vw, 1rem);
   color: #808080;
   margin: 1% 0;
 }
 
 .home-propertiesYouMayLike-p2 {
-  font-size: 28px;
+  font-size: clamp(1rem, 10vw, 1.5rem);
 }
 
 .home-products {
@@ -146,7 +146,7 @@
 }
 
 .home-latestoffers-p1 {
-  font-size: 27px;
+  font-size: clamp(0.5rem, 10vw, 1rem);
   color: #808080;
   margin: 1% 0;
 }
@@ -180,6 +180,14 @@
 .home-latestoffers-searchbar-navigationicon {
   margin-left: 10px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 920px) {
+  .home-products {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -282,4 +290,7 @@
   .home-latestoffers-searchbar::placeholder {
     font-size: 18px;
   }
+}
+
+@media only screen and (max-width: 920px) {
 }
