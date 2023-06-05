@@ -76,7 +76,7 @@ export default function SignIn() {
       if (response.data.role === "admin") {
         navigate("/");
       } else if (response.data.role === "superAdmin") {
-        navigate("/dashboard/admin");
+        navigate("/dashboard");
       } else {
         navigate("/signin");
       }
