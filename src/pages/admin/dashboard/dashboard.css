@@ -1,3 +1,19 @@
 .dashboard {
   display: flex;
 }
+
+.charts-dash {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 97%;
+  margin: 3.5pc auto;
+}
+
+.dashboard-container {
+  margin-left: 28%;
+}
+
+.chart-container {
+  margin-bottom: 20vh;
+}

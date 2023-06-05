@@ -1,0 +1,91 @@
+.card_dash {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  min-height: 70px;
+  margin: 20px 0;
+  transition: all 0.5s ease;
+  color: var(--secondary);
+  min-width: 300px;
+  max-width: 300px;
+}
+.all-card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card_dash:first-child {
+  border-left: 4px solid #f5365c;
+}
+.card_dash:nth-child(2) {
+  border-left: 4px solid #fb6340;
+}
+.card_dash:nth-child(3) {
+  border-left: 4px solid #ffd600;
+}
+.card_dash:nth-child(4) {
+  border-left: 4px solid #11cdef;
+}
+.icon-shape {
+  border-radius: 50%;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;
+}
+.icon-area {
+  background: #f5365c;
+}
+.icon-pie {
+  background: #fb6340;
+}
+.icon-user {
+  background: #ffd600;
+}
+.icon-percent {
+  background: #11cdef;
+}
+.card_dash:hover {
+  box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+    1px 6px 12px rgba(39, 44, 49, 0.04);
+  transform: translate3D(0, -1px, 0) scale(1.02);
+  transition: all 0.5s ease;
+}
+.icon-shape:hover {
+  box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+    1px 6px 12px rgba(39, 44, 49, 0.04);
+  transform: translate3D(0, -1px, 0) scale(1.5);
+  transition: all 0.5s ease;
+}
+.card_charts {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  width: 49%;
+  height: 500px;
+  color: var(--secondary);
+  text-align: center;
+}
+.card_charts:hover {
+  box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+    1px 6px 12px rgba(39, 44, 49, 0.04);
+}
+.chart {
+  height: 400px;
+}
+.recharts-surface {
+  margin: auto;
+  width: 80%;
+  max-width: 80%;
+  max-height: 80%;
+}
