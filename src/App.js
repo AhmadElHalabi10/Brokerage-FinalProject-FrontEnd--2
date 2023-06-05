@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import "./App.css";
 
 import Home from "./pages/home";
@@ -21,6 +27,11 @@ import OffersDashboard from "./pages/admin/offersDashboard";
 import PrivateRoutes from "./components/routes/privateroutes.js";
 import ContactDashboard from "./pages/admin/contactUsDashboard";
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  if (location.pathname === "/index.html") {
+    navigate("/");
+  }
   return (
     <div className="app">
       <BrowserRouter>
