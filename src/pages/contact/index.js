@@ -19,7 +19,7 @@ export default function Contact() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_URL}/contactUs`,
+        `https://almorad-app-api.onrender.com/contactUs`,
         {
           userName,
           email,
