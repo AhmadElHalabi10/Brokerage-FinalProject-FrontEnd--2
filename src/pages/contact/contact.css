@@ -117,10 +117,11 @@ input[type="submit"]:hover {
 
   .contact-bigger {
     display: flex;
+
     /* position: absolute; */
     /* left: 0px; */
-    justify-content: center;
-    height: 600px;
+    /* justify-content: center;  */
+    height: 670px;
     /* margin-right: 50vw; */
     background-image: none;
     background-repeat: none;
@@ -131,7 +132,9 @@ input[type="submit"]:hover {
   .contact-container {
     position: absolute;
     left: 0;
+
     /* border-radius: 5px; */
-    /* padding: 20px; */
+    /* padding: 0; */
+    margin: 0;
   }
 }
