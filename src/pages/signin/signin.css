@@ -101,14 +101,12 @@
     display: flex;
     justify-content: start;
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: 3%;
     width: 80%;
   }
 
   .signin-signinbox-form-closeicon {
     position: absolute;
-    top: 0;
-    left: 0;
   }
 
   .signin-signinbox-title {
@@ -119,8 +117,8 @@
   }
 
   .signin-signinbox-form-closeicon {
-    top: 0px;
-    right: 0px;
+    top: 10.5vh;
+    right: -45vw;
   }
 
   .signin-signinbox {
@@ -153,7 +151,7 @@
 
   .signin-signinbox-noaccount-signup {
     display: flex;
-    width: 78vw;
+    width: 68vw;
     justify-content: space-between;
     align-items: center;
   }
