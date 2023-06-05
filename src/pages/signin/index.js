@@ -78,7 +78,7 @@ export default function SignIn() {
       } else if (response.data.role === "superAdmin") {
         navigate("/dashboard");
       } else {
-        navigate("/signin");
+        navigate("/");
       }
     } catch (err) {
       if (err.response && err.response.data && err.response.data.errors) {
